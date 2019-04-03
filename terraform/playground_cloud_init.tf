@@ -12,7 +12,7 @@ data "template_file" "disk_setup" {
   }
 }
 
-data "template_cloudinit_config" "teamserver_cloud_init_tasks" {
+data "template_cloudinit_config" "playground_cloud_init_tasks" {
   gzip = true
   base64_encode = true
 
