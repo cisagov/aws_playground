@@ -39,7 +39,7 @@ resource "aws_instance" "kali" {
     "${aws_security_group.playground_private_sg.id}"
   ]
 
-  user_data_base64 = "${data.template_cloudinit_config.playground_ssh_cloud_init_tasks.rendered}"
+  user_data_base64 = "${data.template_cloudinit_config.ssh_cloud_init_tasks.rendered}"
 
   tags = "${merge(var.tags, map("Name", "Kali"))}"
   volume_tags = "${merge(var.tags, map("Name", "Kali"))}"
