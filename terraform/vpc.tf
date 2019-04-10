@@ -49,3 +49,13 @@ resource "aws_network_acl" "public" {
 
   tags = "${merge(var.tags, map("Name", "Playground Public Subnet ACL"))}"
 }
+
+# ACL for the private subnet of the VPC
+resource "aws_network_acl" "playground_private_acl" {
+  vpc_id = "${aws_vpc.vpc.id}"
+  subnet_ids = [
+    "${aws_subnet.playground_private_subnet.id}"
+  ]
+
+  tags = "${merge(var.tags, map("Name", "Playground Private Subnet ACL"))}"
+}
