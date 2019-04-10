@@ -55,7 +55,7 @@ resource "aws_security_group_rule" "bastion_egress_for_vnc" {
   type = "egress"
   protocol = "tcp"
   cidr_blocks = [
-    "${aws_instance.playground_dashboard.private_ip}/32"
+    "${aws_instance.kali.private_ip}/32"
   ]
   from_port = 5900
   to_port = 5900
