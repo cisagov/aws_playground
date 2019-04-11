@@ -3,7 +3,7 @@ data "aws_ami" "kali" {
   filter {
     name = "name"
     values = [
-      "kali-hvm-*-x86_64-ebs"
+      "kali-playground-hvm-{{timestamp}}-x86_64-ebs"
     ]
   }
 
