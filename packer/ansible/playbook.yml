@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: all:!kali
   name: Update the base image
   become: yes
   become_method: sudo

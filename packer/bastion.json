@@ -9,7 +9,7 @@
                 "root-device-type": "ebs"
             },
             "owners": [
-                "563873274798"
+                "379101102735"
             ],
             "most_recent": true
         },
@@ -24,8 +24,8 @@
 
         "tags": {
             "Team": "NCATS Playground - Development",
-            "Application": "Kali Playground",
-            "OS_Version": "Kali",
+            "Application": "AWS Playground",
+            "OS_Version": "Debian Stretch",
             "Release": "Latest",
             "Base_AMI_Name": "{{ .SourceAMIName }}"
         }
