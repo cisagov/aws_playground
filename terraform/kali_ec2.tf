@@ -3,7 +3,7 @@ data "aws_ami" "kali" {
   filter {
     name = "name"
     values = [
-      "kali-playground-hvm-{{timestamp}}-x86_64-ebs"
+      "kali-playground-hvm-*-x86_64-ebs"
     ]
   }
 
@@ -24,14 +24,14 @@ data "aws_ami" "kali" {
 # The kali EC2 instance
 resource "aws_instance" "kali" {
   ami = "${data.aws_ami.kali.id}"
-  instance_type = "t3.medium"
+  instance_type = "t2.medium"
   # This is the private subnet
   subnet_id = "${aws_subnet.playground_private_subnet.id}"
   associate_public_ip_address = false
 
   root_block_device {
     volume_type = "gp2"
-    volume_size = 10
+    volume_size = 25
     delete_on_termination = true
   }
 
