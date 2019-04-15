@@ -57,6 +57,6 @@ resource "aws_security_group_rule" "bastion_egress_for_vnc" {
   cidr_blocks = [
     "${aws_instance.kali.private_ip}/32"
   ]
-  from_port = 5900
-  to_port = 5900
+  from_port = 5901
+  to_port = 5901
 }
