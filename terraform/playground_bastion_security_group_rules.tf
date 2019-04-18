@@ -49,6 +49,18 @@ resource "aws_security_group_rule" "bastion_egress_to_private_sg_via_ssh" {
   to_port = 22
 }
 
+# Allow egress via https port
+resource "aws_security_group_rule" "bastion_egress_for_https" {
+  security_group_id = "${aws_security_group.playground_bastion_sg.id}"
+  type = "egress"
+  protocol = "tcp"
+  cidr_blocks = [
+    "${aws_instance.kali.private_ip}/32"
+  ]
+  from_port = 443
+  to_port = 443
+}
+
 # Allow egress via vnc port
 resource "aws_security_group_rule" "bastion_egress_for_vnc" {
   security_group_id = "${aws_security_group.playground_bastion_sg.id}"
