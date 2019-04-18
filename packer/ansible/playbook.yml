@@ -5,3 +5,10 @@
   become_method: sudo
   roles:
     - upgrade
+
+- hosts: kali
+  name: Install RealVNC
+  become: yes
+  become_method: sudo
+  roles:
+    - kali
