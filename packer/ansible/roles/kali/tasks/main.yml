@@ -1,0 +1,22 @@
+---
+# tasks file for kali
+# This is a place holder. I tried uninstaling tightvnc and install realvnc
+# - name: Remove tightvnc
+#   apt:
+#     pkg: tightvncserver
+#     state: absent
+#   sudo: yes
+#
+# - name: Download RealVNC
+#   get_url:
+#     url: https://www.realvnc.com/connect/download/binary/latest/debian/64-bit/
+#     dest: /tmp/VNC.deb
+#     mode: 0440
+#
+#
+# - name: install .deb using dpkg
+#   apt:
+#     deb: '{{ item }}'
+#     state: present
+#   with_items:
+#     - /tmp/VNC.deb
