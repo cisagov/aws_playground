@@ -1,7 +1,7 @@
 kali
 =========
 
-Ansible role for upgrading an Amazon Linux instance.
+Ansible role for provisioning kali instance.
 
 Requirements
 ------------
