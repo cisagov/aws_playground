@@ -15,7 +15,7 @@
         },
         "instance_type": "t3.micro",
         "ssh_username": "admin",
-        "ami_name": "playground-bastion-hvm-{{timestamp}}-x86_64-ebs",
+        "ami_name": "guacamole-playground-hvm-{{timestamp}}-x86_64-ebs",
         "ami_regions": [
             "us-east-1",
             "us-west-1",
@@ -36,7 +36,7 @@
             "type": "ansible",
             "playbook_file": "packer/ansible/playbook.yml",
             "groups": [
-                "bastion"
+                "guacamole"
             ]
         }
     ]
