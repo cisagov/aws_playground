@@ -1,0 +1,8 @@
+- src: https://github.com/cisagov/ansible-role-banner
+  name: banner
+- src: https://github.com/cisagov/ansible-role-docker
+  name: docker
+- src: https://github.com/cisagov/ansible-role-github-oauth
+  name: github_oauth
+- src: https://github.com/cisagov/ansible-role-htop
+  name: htop
