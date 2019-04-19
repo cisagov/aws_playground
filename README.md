@@ -6,6 +6,7 @@ The AMIs are built like so:
 ansible-galaxy install -r packer/ansible/requirements.yml
 AWS_MAX_ATTEMPTS=60 AWS_POLL_DELAY_SECONDS=60 packer build packer/bastion.json
 AWS_MAX_ATTEMPTS=60 AWS_POLL_DELAY_SECONDS=60 packer build packer/kali.json
+AWS_MAX_ATTEMPTS=60 AWS_POLL_DELAY_SECONDS=60 packer build packer/guacamole.json
 ```
 
 Note that
