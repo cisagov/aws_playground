@@ -12,3 +12,10 @@
   become_method: sudo
   roles:
     - kali
+
+- hosts: guacamole
+  name: Install guacamole
+  become: yes
+  become_method: sudo
+  roles:
+    - guacamole

@@ -72,3 +72,15 @@ resource "aws_security_group_rule" "bastion_egress_for_vnc" {
   from_port = 5901
   to_port = 5901
 }
+
+# Allow egress via vnc port
+resource "aws_security_group_rule" "bastion_egress_for_guacamole" {
+  security_group_id = "${aws_security_group.playground_bastion_sg.id}"
+  type = "egress"
+  protocol = "tcp"
+  cidr_blocks = [
+    "${aws_instance.guacamole.private_ip}/32"
+  ]
+  from_port = 8080
+  to_port = 8080
+}
