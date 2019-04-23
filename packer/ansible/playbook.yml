@@ -18,4 +18,5 @@
   become: yes
   become_method: sudo
   roles:
+    - docker
     - guacamole
