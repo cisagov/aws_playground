@@ -73,7 +73,7 @@ resource "aws_security_group_rule" "bastion_egress_for_vnc" {
   to_port = 5901
 }
 
-# Allow egress via vnc port
+# Allow egress of guacamole
 resource "aws_security_group_rule" "bastion_egress_for_guacamole" {
   security_group_id = "${aws_security_group.playground_bastion_sg.id}"
   type = "egress"
@@ -83,4 +83,16 @@ resource "aws_security_group_rule" "bastion_egress_for_guacamole" {
   ]
   from_port = 8080
   to_port = 8080
+}
+
+# Allow egress via guacd port for the guacamole dashboard
+resource "aws_security_group_rule" "bastion_egress_for_guacd" {
+  security_group_id = "${aws_security_group.playground_bastion_sg.id}"
+  type = "egress"
+  protocol = "tcp"
+  cidr_blocks = [
+    "${aws_instance.guacamole.private_ip}/32"
+  ]
+  from_port = 4822
+  to_port = 4822
 }
