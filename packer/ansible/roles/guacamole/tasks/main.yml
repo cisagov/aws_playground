@@ -1,24 +1,18 @@
 ---
 # tasks file for guacamole
-#This is a placeholder for when I was installing guacamole by hand but I will use the existing docker container instead
-# - name: Download Guacamole server and check checksum
-#   get_url:
-#     url: http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.0.0/source/guacamole-server-1.0.0.tar.gz
-#     dest: /var/guacamole-install-script.sh
-#     mode: 0740
-#     checksum: sha256:e50d513f5abb330722f2380d9cd5232a8c8055e646e0ec3bd394a72f46223556
-#
-# - name: Install a list of packages
-#   apt:
-#     name: "{{ packages }}"
-#   vars:
-#     packages:
-#     - libcairo2-dev
-#     - libjpeg62-turbo-dev
-#     - libpng12-dev
-#     - libossp-uuid-dev
-#     - libavcodec-dev
-#     - libavutil-dev
-#     - libswscale-dev
-
 # docker pull guacamole/guacamole
+- name: Pull guacamole docker image
+  shell: docker pull guacamole/guacamole
+
+# docker pull guacamole/guacd
+- name: Pull guacamole docker image
+  shell: docker pull guacamole/guacd
+
+- name: Get postgres for guacd
+  shell: docker pull postgres
+
+-name: Get sql init script for postgres
+ shell: docker run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgres > /tmp/initdb.sql
+
+- name: Start guacamole, postgres, and guacd
+  shell: docker-compose up
