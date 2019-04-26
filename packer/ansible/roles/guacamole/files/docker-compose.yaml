@@ -7,7 +7,7 @@ services:
     container_name: guacd
 
   postgres:
-    image: "postgres"
+    image: "guac-postgres"
     environment:
       POSTGRES_PASSWORD: PASSWORD_HERE
     container_name: postgres
