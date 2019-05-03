@@ -57,7 +57,7 @@ module "playground_gaucamole_ansible_provisioner" {
   ]
   envs = [
     "host=${aws_instance.guacamole.private_ip}",
-    "bastion_host=${aws_instance.guacamole.public_ip}",
+    "bastion_host=${aws_instance.playground_bastion.public_ip}",
     "host_groups=guacamole"
   ]
   playbook = "../ansible/playbook.yml"

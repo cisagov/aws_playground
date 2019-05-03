@@ -1,0 +1,17 @@
+---
+# tasks file for guacamole
+# - name: Start guacamole docker compose
+#   shell: docker-compose -f /var/log/docker/docker-compose.yaml up
+#   become_method: sudo
+#   vars:
+#     ansible_ssh_pipelining: yes
+- name: Copy guacamole service file
+  template:
+    src: guacamole.service
+    dest: /etc/systemd/system/guacamole.service
+    mode: 644
+
+- name: Start guacamole service
+  service:
+    name: guacamole
+    state: started
