@@ -5,4 +5,5 @@ Description=guacamole service
 Type=simple
 Restart=always
 RestartSec=1
+User=docker
 ExecStart=docker-compose -f /var/log/docker/docker-compose.yaml up

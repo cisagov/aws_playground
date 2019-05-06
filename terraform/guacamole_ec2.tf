@@ -48,7 +48,7 @@ resource "aws_instance" "guacamole" {
 }
 
 # Provision the guacamole EC2 instance via Ansible
-module "playground_gaucamole_ansible_provisioner" {
+module "playground_guacamole_ansible_provisioner" {
   source = "github.com/cloudposse/tf_ansible"
 
   arguments = [
